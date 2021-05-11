@@ -1,0 +1,116 @@
+/*
+Color Theme:
+Black #171219
+Steel #225560
+Lime #EDF060
+*/
+
+/*---------------Box Sizing----------------*/
+
+html {
+    box-sizing: border-box;
+}
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/*---------------Utility Styles----------------*/
+
+.container {
+    width: 80vw;
+    margin: 40px auto; /*40px top and bottom, auto left and right*/
+    max-width: 900px;
+}
+
+/*---------------Responsive Images----------------*/
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*---------------Global Styles----------------*/
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+}
+
+header.primary {
+    background-color: #225560;
+    text-align: center;
+    color: #225560;
+    padding: 6em 2em;
+    position: relative;
+}
+
+header.primary h1 {
+    font-size: 3.2rem;
+    margin: 20px 0;
+    position: relative;
+}
+
+header.primary::before{
+    content: "";
+    background-image: url('../img/dragoncrew.8k.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.5;
+}
+
+header.primary h1 a {
+    color: white;
+    background-image: url('../img/SpaceX-Logo.png');
+    display: block;
+    width: 449px;
+    height: 70px;
+    margin: 0 auto;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+header.primary h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2em;
+    text-shadow: 2px 1px #EDF060;
+    margin: 20px auto 40px;
+    position: relative;
+}
+
+header.primary nav ul {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+header.primary nav li {
+    list-style-type: none;
+    padding: 0;
+    width: 20%;
+}
+
+header.primary nav a:link,
+header.primary nav a:visited {
+    color: #225560;
+    text-decoration: none;
+    background-color: rgba(225, 225, 225, 0.5);
+    padding: 8px;
+    border-radius: 20px;
+    display: block;
+}
+
+header.primary nav a:hover,
+header.primary nav a:active {
+    background-color: rgba(225, 225, 225, 0.3);
+}
+
