@@ -23,6 +23,13 @@ html {
     max-width: 900px;
 }
 
+.img-center {
+  display: block;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+  padding: 5px;
+}
+
 /*---------------Responsive Images----------------*/
 
 img {
@@ -34,6 +41,7 @@ img {
 
 body {
     font-family: 'Ubuntu', sans-serif;
+    color: #225560;
     margin: 0;
 }
 
@@ -42,7 +50,6 @@ body {
 header.primary {
     background-color: #225560;
     text-align: center;
-    color: #225560;
     padding: 6em 2em;
     position: relative;
 }
@@ -66,7 +73,6 @@ header.primary h1 {
 }
 
 header.primary h1 a {
-    color: white;
     background-image: url('../img/SpaceX-Logo.png');
     display: block;
     width: 449px;
@@ -130,6 +136,47 @@ section#content h2 {
     text-align: center;
 }
 
+section#content table {
+  width: 100%;
+  border: 2px solid #225560;
+  /* border-radius: 20px; How do you make just the outside corners rounded? */
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(34, 85, 96, 0.5);
+}
+
+section#content caption {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2em;
+  color: #EDF060;
+  text-shadow: 2px 1px #225560; 
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+section#content th {
+  background: #225560;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9em;
+  color: #225560;
+  text-shadow: 0.5px 0.25px #EDF060; 
+  text-align: left;
+  padding: 10px;
+}
+
+section#content td {
+  border: 2px solid #225560;
+  padding: 5px;
+}
+
+section#content tr:nth-child(odd) {
+  background: rgba(34, 85, 96, 0.2);
+}
+
+section#content tr:hover {
+  background: #225560;
+  color: #EDF060;
+}
 /* ------------- Articles --------------- */
 
 section#articles {
@@ -141,7 +188,6 @@ section#articles .container {
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  border-bottom: 1px solid #c0c0c0;
   padding: 0 0 4em 0;
 }
 
@@ -161,47 +207,168 @@ section#articles h2 {
 
 #articles article.post {
   width: 30%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
   padding: 10px;
   transition: 0.6s;
   font-size: 0.8rem;
-  border-radius: 10px;
-  background: #fff;
+  border-radius: 20px;
+  background: #EDF060;
 }
 
 #articles article.post h2 {
   font-size: 1.5em;
-  text-shadow: none;
 }
 
 #articles article.post:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 8px rgba(225, 225, 225, 0.5);
 }
 
 #articles article time,
 #articles article figcaption,
 #articles article footer {
   font-size: 0.8em;
-  color: #c0c0c0;
+  color: #225560;
   text-transform: uppercase;
 }
 
 #articles .post a:link,
 #articles .post a:visited {
-  color: #3b638b;
+  color: #EDF060;
+  text-shadow: 1px 0.5px #225560;
+  text-decoration: none;
 }
+
+#articles .post a:hover {
+    color: #225560;
+    text-shadow: none;
+}
+    
 
 #articles .post figure {
   margin: 0;
 }
 
 #articles .post img {
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 #articles ul {
   padding: 0 20px;
 }
+
 #articles li {
   margin-bottom: 20px;
+}
+
+/* ------------- Hero --------------- */
+
+/*I don't want the white bars on either side*/
+section#hero {
+  background-color: #225560;
+}
+
+
+/*#hero {
+  padding: 4 em 0;
+}*/
+
+#hero img {
+    border-radius: 10px;
+}
+
+/* ------------- Aside --------------- */
+
+/* Attribute Selector */
+aside[role="complementary"] {
+  background-color: #225560;
+  color: white;
+  padding: 2.5em;
+}
+
+aside .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+aside article.widget {
+  width: 40%;
+}
+
+.widget.overview table {
+  font-size: 0.8em;
+  border-collapse: collapse;
+}
+
+.widget.overview table td {
+  border-bottom: 2px solid #EDF060;
+  padding: 10px;
+}
+
+.widget.overview table td:nth-child(even) {
+  text-align: right;
+}
+
+aside article h2 {
+  color: #225560;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5em;
+  text-shadow: 1px 0.5px #EDF060;
+}
+
+aside article footer {
+  display: none;
+}
+
+/* ------------- Footer --------------- */
+
+footer#colophon {
+  background-color: #EDF060;
+}
+
+#colophon h6 {
+  padding: 20px;
+  margin: 0;
+  color: #225560;
+  text-align: center;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+#colophon h6 a:link,
+#colophon h6 a:visited {
+  color: #225560;
+}
+
+/* ---------------Media Queries----------------- */
+
+@media screen and (max-width: 600px) {
+  header.primary nav ul {
+    flex-direction: column;
+    margin: 0 auto;
+    width: 400px;
+  }
+
+  header.primary nav ul li {
+    margin-bottom: 10px;
+    width: 400px;
+  }
+
+  header.primary nav ul li a {
+    display: block;
+  }
+
+  section#articles .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #c0c0c0;
+    padding: 0 0 4em 0;
+  }
+
+  #articles article.post {
+    width: 100%;
+    margin-bottom: 2em;
+  }
 }
